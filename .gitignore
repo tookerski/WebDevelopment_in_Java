@@ -15,3 +15,6 @@ hs_err_pid*
 /.metadata/
 /RemoteSystemsTempFiles/
 /Servers/
+
+#Test folder
+/JavaTest/
