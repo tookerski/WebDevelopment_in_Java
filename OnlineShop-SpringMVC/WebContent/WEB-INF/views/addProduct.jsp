@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
@@ -20,7 +21,7 @@
 				<fieldset>
 					<legend>Add new product</legend>
 						<div class="form-group">
-							<label class="control-label col-lg-2 col-lg-2" for="productId">Product Id</label>
+							<label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProduct.form.productId.label"/></label>
 							<div class="col-lg-10">
 								<form:input id="productId" path="productId" type="text" class="form:input-large"/>
 							</div>
