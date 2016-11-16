@@ -12,4 +12,5 @@ public interface ProductRepository {
 	List<Product> getProductsByCategory(String category);
 	//method for filter products by using matrix variables
 	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
+	void addProduct(Product product);
 }
