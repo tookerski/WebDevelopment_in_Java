@@ -1,19 +1,27 @@
 package org.tookerski.webstore.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.tookerski.webstore.model.Product;
+import org.tookerski.webstore.service.ProductService;
 
 @Controller
 public class HomeController {
 
+	@Autowired
+	private ProductService productService;
+	
 	/**
 	 * Static list of users to simulate Database
 	 */
@@ -29,7 +37,10 @@ public class HomeController {
 	}
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String home(Locale locale, Model model){
-		return "redirect:/index";
+		Map<String, Object> root = new HashMap<>();
+		List<Product> productList = productService.getAllProducts();
+		root.put("productList", productList);
+		return "index";
 	}
 	
 	/**
@@ -44,7 +55,7 @@ public class HomeController {
 
 		model.addAttribute("userList", userList);
 
-		return "welcome";
+		return "index";
 	}
 
 	/**

@@ -8,8 +8,11 @@ public class Product {
 	private BigDecimal price;
 	private String title;
 	private String image;
-	private String script;
+	private String summary;
 	private String content;
+	private BigDecimal buyPrice;
+	private boolean isBuy;
+	private boolean isSell;
 	public Product(){
 		super();
 	}
@@ -25,7 +28,7 @@ public class Product {
 		this.price = price;
 		this.title = title;
 		this.image = image;
-		this.script = script;
+		this.summary = script;
 		this.content = content;
 	}
 	public int getId() {
@@ -52,17 +55,35 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getScript() {
-		return script;
+	public String getSummary() {
+		return summary;
 	}
-	public void setScript(String script) {
-		this.script = script;
+	public void setSummary(String summary) {
+		this.summary = summary;
 	}
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public BigDecimal getBuyPrice() {
+		return buyPrice;
+	}
+	public void setBuyPrice(BigDecimal buyPrice) {
+		this.buyPrice = buyPrice;
+	}
+	public boolean isBuy() {
+		return isBuy;
+	}
+	public void setBuy(boolean isBuy) {
+		this.isBuy = isBuy;
+	}
+	public boolean isSell() {
+		return isSell;
+	}
+	public void setSell(boolean isSell) {
+		this.isSell = isSell;
 	}
 	@Override
 	public boolean equals(Object obj){

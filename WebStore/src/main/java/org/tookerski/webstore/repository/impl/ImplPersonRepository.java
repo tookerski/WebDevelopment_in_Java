@@ -3,9 +3,11 @@ package org.tookerski.webstore.repository.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
 import org.tookerski.webstore.model.Person;
 import org.tookerski.webstore.repository.PersonRepository;
 
+@Repository
 public class ImplPersonRepository implements PersonRepository {
 
 	private List<Person> personList = new ArrayList<Person>();
