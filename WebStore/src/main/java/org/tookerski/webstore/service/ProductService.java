@@ -6,7 +6,18 @@ import org.tookerski.webstore.model.Product;
 
 public interface ProductService {
 
-	List<Product> getAllProducts();
-	Product getProductById(int id);
-	void addProduct(Product product);
+	public List<Product> getProductList();
+
+	public Product getProduct(int id);
+
+	public int buyProduct(int id, int personId, double price, long buyTime);
+
+	public int deleteProduct(int id);
+
+	public int publicProduct(Product product);
+
+	public int editProduct(Product product);
+
+	public List<Product>  getBuyListOrderByBuytime();
+	
 }
