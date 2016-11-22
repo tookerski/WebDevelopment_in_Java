@@ -50,7 +50,7 @@ public class ProductController {
 
 	public Result doApiBuy(@RequestParam(value = "id", required = false) Integer id, ModelMap map, HttpSession session)
 			throws IOException {
-
+		//Buy page
 		Product product = null;
 		int rowAffected = 0;
 		Result rs = new Result();
@@ -91,7 +91,7 @@ public class ProductController {
 	@ResponseBody
 	public Result doApiDelete(@RequestParam(value = "id", required = false) Integer id, ModelMap map,
 			HttpSession session) throws IOException {
-
+		//ensure that the products sold cannot be deleted 
 		Product product = null;
 		int rowAffected = 0;
 		Result rs = new Result();

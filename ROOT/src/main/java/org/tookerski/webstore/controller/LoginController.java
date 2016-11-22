@@ -57,7 +57,8 @@ public class LoginController {
 
 		User user = null;
 		Result rs = new Result();
-
+		
+		//Check if no login history or direct to login page
 		if (userName != null && password != null) {
 			user = loginService.getUser(userName, password);
 		} else {
