@@ -58,9 +58,9 @@ public class ProductController {
 		rs.setMessage("Page not found!");
 		rs.setResult(false);
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 0 && id != null) {
+		if (user != null && user.getUsertype() == 0 && id != null) {
 			product = productService.getProduct(id);
-			if (!product.isBuy()) {
+			if (!product.getIsBuy()) {
 				rowAffected = productService.buyProduct(id, user.getId(), product.getPrice(),
 						System.currentTimeMillis());
 				if (rowAffected == 1) {
@@ -77,7 +77,7 @@ public class ProductController {
 	public String doAccount(ModelMap map, HttpSession session) throws IOException {
 
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 0) {
+		if (user != null && user.getUsertype() == 0) {
 			map.addAttribute("buyList", productService.getBuyListOrderByBuytime());
 			map.addAttribute("user", session.getAttribute("user"));
 			return "account";
@@ -99,9 +99,9 @@ public class ProductController {
 		rs.setMessage("Pages not found!");
 		rs.setResult(false);
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 1 && id != null) {
+		if (user != null && user.getUsertype() == 1 && id != null) {
 			product = productService.getProduct(id);
-			if (!product.isSell()) {
+			if (!product.getIsSell()) {
 				rowAffected = productService.deleteProduct(id);
 				if (rowAffected == 1) {
 					map.addAttribute("user", user);
@@ -120,7 +120,7 @@ public class ProductController {
 
 		System.out.println("/edit id=" + id);
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 1 && id != null) {
+		if (user != null && user.getUsertype() == 1 && id != null) {
 			map.addAttribute("user", user);
 			map.addAttribute("product", productService.getProduct(id));
 			return "edit";
@@ -134,7 +134,7 @@ public class ProductController {
 	public String doPublic(HttpSession session) throws IOException {
 
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 1) {
+		if (user != null && user.getUsertype() == 1) {
 			return "public";
 		} else {
 			session.removeAttribute("user");
@@ -146,7 +146,7 @@ public class ProductController {
 	public String doPublicSubmit(Product product, ModelMap map, HttpSession session) throws IOException {
 
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 1) {
+		if (user != null && user.getUsertype() == 1) {
 
 			productService.publicProduct(product);
 			if (product.getId() != 0) {
@@ -166,7 +166,7 @@ public class ProductController {
 
 
 		User user = (User) session.getAttribute("user");
-		if (user != null && user.isUserType() == 1) {
+		if (user != null && user.getUsertype() == 1) {
 
 			int record = productService.editProduct(product);
 			if (record != 0) {

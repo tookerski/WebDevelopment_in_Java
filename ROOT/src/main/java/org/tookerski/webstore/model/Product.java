@@ -12,37 +12,21 @@ public class Product {
 	private boolean isBuy;
 	private boolean isSell;
 	private long buyTime;
-	
-	public int getId() {
-		return id;
+
+	public long getBuyTime() {
+		return buyTime;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setBuyTime(long buyTime) {
+		this.buyTime = buyTime;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getDetail() {
+		return detail;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 
 	public Double getBuyPrice() {
@@ -61,36 +45,52 @@ public class Product {
 		this.summary = summary;
 	}
 
-	public String getDetail() {
-		return detail;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public int getId() {
+		return id;
 	}
 
-	public boolean isBuy() {
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public boolean getIsBuy() {
 		return isBuy;
 	}
 
-	public void setBuy(boolean isBuy) {
+	public void setIsBuy(boolean isBuy) {
 		this.isBuy = isBuy;
 	}
 
-	public boolean isSell() {
+	public boolean getIsSell() {
 		return isSell;
 	}
 
-	public void setSell(boolean isSell) {
+	public void setIsSell(boolean isSell) {
 		this.isSell = isSell;
 	}
 
-	public long getBuyTime() {
-		return buyTime;
+	public Double getPrice() {
+		return price;
 	}
 
-	public void setBuyTime(long buyTime) {
-		this.buyTime = buyTime;
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getImage() {
+		return image;
 	}
 
 	@Override

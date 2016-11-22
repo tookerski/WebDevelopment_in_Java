@@ -3,11 +3,10 @@ package org.tookerski.webstore.model;
 public class User {
 
 	private int id;
-	private String userName;
-	private String nickName;
-	private int userType;
-	
-	
+	private String username;
+	private String nickname;
+	private int usertype;
+
 	public int getId() {
 		return id;
 	}
@@ -16,28 +15,28 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getNickName() {
-		return nickName;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
-	public int isUserType() {
-		return userType;
+	public int getUsertype() {
+		return usertype;
 	}
 
-	public void setUserType(int userType) {
-		this.userType = userType;
+	public void setUsertype(int usertype) {
+		this.usertype = usertype;
 	}
 	
 	@Override
@@ -66,6 +65,6 @@ public class User {
 	}
 	@Override
 	public String toString(){
-		return "Product [productId="+id+", name="+userName+"]";
+		return "Product [productId="+id+", name="+username+"]";
 	}
 }
